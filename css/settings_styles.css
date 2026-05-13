@@ -298,3 +298,29 @@ h1,h2,h3,h4,h5 {
 ::-webkit-scrollbar { width: 12px; }
 ::-webkit-scrollbar-track { background: var(--color-background); border-left: 3px solid #000; }
 ::-webkit-scrollbar-thumb { background: #000; border: 2px solid var(--color-background); }
+
+/* Merapikan input di dalam tabel */
+.table .neo-input {
+    border-width: 2px;
+    padding: 8px;
+    font-size: 13px;
+    width: 100%;
+}
+
+.table td {
+    background: #fff;
+}
+
+/* Memberi warna berbeda untuk tiap baris agar mudah dibaca data analyst */
+.table tbody tr:nth-child(even) td {
+    background: #fdfdfd;
+}
+
+select.neo-input {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}

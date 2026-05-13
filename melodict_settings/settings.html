@@ -28,25 +28,17 @@
       <span class="material-symbols-outlined">dashboard</span>
       Dashboard
     </a>
-    <a href="/MELODICT/melodict_mood_sync/mood-sync.html">
-      <span class="material-symbols-outlined">psychology</span>
-      Mood Sync
-    </a>
-    <a href="/MELODICT/melodict_focus_playlist/focus-playlists.html">
-      <span class="material-symbols-outlined">headphones</span>
-      Focus Playlists
-    </a>
     <a href="/MELODICT/melodict_analytics_dashboard/analytics.html">
       <span class="material-symbols-outlined">leaderboard</span>
       Analytics
     </a>
-    <a href="/MELODICT/melodict_settings/settings.html" class="active">
-      <span class="material-symbols-outlined">settings</span>
-      Settings
-    </a>
     <a href="/MELODICT/melodict_wellness_habits/wellness-habits.html">
       <span class="material-symbols-outlined">fitness_center</span>
       Wellness Habits
+    </a>
+        <a href="/MELODICT/melodict_settings/settings.html" class="active">
+      <span class="material-symbols-outlined">settings</span>
+      Settings
     </a>
   </nav>
 
@@ -124,17 +116,17 @@
 
 <div class="col-md-6">
 <label class="text-label mb-2">DISPLAY NAME</label>
-<input type="text" class="neo-input" value="ALEX VIBRATIONS">
+<input type="text" class="neo-input" value="DEWO">
 </div>
 
 <div class="col-md-6">
 <label class="text-label mb-2">EMAIL ADDRESS</label>
-<input type="email" class="neo-input" value="alex@melodict.io">
-</div>
+  <input type="email" class="neo-input" value="alex@gmail.com">
+  </div>
 
 <div class="col-12">
 <label class="text-label mb-2">USER BIO</label>
-<textarea class="neo-input" rows="3">Synthesizing mental clarity through high-fidelity soundscapes.</textarea>
+<textarea class="neo-input" rows="3">Rayya cinta Dewo </textarea>
 </div>
 
 <div class="col-12">
@@ -188,6 +180,77 @@ SYNC STATUS
 </div>
 </section>
 
+<div class="row mb-5 justify-content-center"> 
+    
+    <div class="col-lg-10">
+        <h2 class="mb-3 text-uppercase">DAILY ACTIVITY TIMELINE</h2>
+    </div>
+
+    <div class="col-lg-10">
+        <div class="bento-card neo-shadow p-4 bg-white">
+            <p class="text-label mb-4" style="opacity: 0.7;">Atur jadwal harianmu untuk sinkronisasi otomatis mode Melodict.</p>
+            
+            <div id="timeline-container" class="d-flex flex-column gap-4">
+                <div class="row g-3 align-items-end border-bottom border-2 pb-4 mb-2">
+                    <div class="col-md-2">
+                        <label class="text-label mb-2" style="font-size: 10px;">MULAI</label>
+                        <input type="time" class="neo-input p-2" value="07:00">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="text-label mb-2" style="font-size: 10px;">SELESAI</label>
+                        <input type="time" class="neo-input p-2" value="15:00">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="text-label mb-2" style="font-size: 10px;">AKTIVITAS</label>
+                        <input type="text" class="neo-input p-2" value="Sekolah SMK">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="text-label mb-2" style="font-size: 10px;">MODE PRESET</label>
+                        <select class="neo-input p-2">
+                            <option selected>HIGH FOCUS</option>
+                            <option>CREATIVE FLOW</option>
+                            <option>WIND DOWN</option>
+                            <option>WORKOUT</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn-dark-neo w-100 py-2" style="background: #ff6b6b;">X</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 g-4 border-top border-2 pt-4" style="background: #f8f9fa; margin: 0 -1.5rem -1.5rem -1.5rem; padding: 2rem; border-radius: 0 0 15px 15px;">
+                <div class="col-12 mb-2">
+                    <span class="badge bg-dark text-uppercase px-3 py-2">Mode Guide</span>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-bold mb-1" style="font-size: 12px;">HIGH FOCUS</h6>
+                    <p class="mb-0" style="font-size: 11px; opacity: 0.8;">Instrumental & BPM stabil. Cocok buat coding/ngambis tanpa gangguan lirik.</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-bold mb-1" style="font-size: 12px;">CREATIVE FLOW</h6>
+                    <p class="mb-0" style="font-size: 11px; opacity: 0.8;">High Valence (ceria) & variatif. Buat pancing ide pas lagi desain/nulis.</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-bold mb-1" style="font-size: 12px;">WIND DOWN</h6>
+                    <p class="mb-0" style="font-size: 11px; opacity: 0.8;">Low energy & akustik. Nurunin stres biar santai habis pulang sekolah.</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-bold mb-1" style="font-size: 12px;">WORKOUT</h6>
+                    <p class="mb-0" style="font-size: 11px; opacity: 0.8;">High Danceability & Upbeat. Otomatis narik lagu energi tinggi dari Spotify.</p>
+                </div>
+            </div>
+
+            <button id="add-slot-btn" class="btn-dark-neo px-4 py-3" style="background: #fbe36a; color: black; font-size: 12px;">
+    + TAMBAH SLOT
+</button>
+<button id="save-schedule-btn" class="btn-dark-neo px-5 py-3" style="font-size: 12px;">
+    SIMPAN PERUBAHAN
+</button>
+        </div>
+    </div>
+</div>
+
   <footer id="site-footer">
     <h3 class="mb-0" style="font-size:24px; color: var(--color-background);">MELODICT</h3>
     <span class="text-label" style="font-size:12px;">© 2026 MELODICT. STAY LOUD. STAY GROUNDED.</span>
@@ -232,6 +295,9 @@ SYNC STATUS
     <span class="material-symbols-outlined">fullscreen</span>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/settings-script.js"></script>
 
 </body>
 </html>
