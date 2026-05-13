@@ -1,20 +1,12 @@
-/**
- * MELODICT ENGINE v5.0 - Ultimate Unified Build
- * Features: Profile Identity, Daily Timeline, & Spotify API Sync
- * Author: Rayya
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. SELEKTOR ELEMEN ---
+
     const profileForm = document.querySelector('section .bento-card form');
     const timelineContainer = document.getElementById('timeline-container');
     const addBtn = document.getElementById('add-slot-btn');
     const saveScheduleBtn = document.getElementById('save-schedule-btn');
     
-    // Status awal API Sync
     let isApiSynced = true;
 
-    // --- 2. LOGIKA SPOTIFY API SYNC (TOGGLE) ---
     function handleApiToggle() {
         const toggleBtn = document.querySelector('.toggle-switch');
         const statusText = document.querySelector('.sync-status-text');
@@ -44,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 3. LOGIKA PROFILE IDENTITY ---
     function loadProfileData() {
         const savedProfile = JSON.parse(localStorage.getItem('melodict_profile'));
         if (savedProfile) {
@@ -82,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
-    // --- 4. LOGIKA DAILY ACTIVITY TIMELINE ---
     function createRow(start = "07:00", end = "15:00", activity = "", preset = "HIGH FOCUS") {
         const row = document.createElement('div');
         row.className = 'row g-3 align-items-end border-bottom border-2 pb-4 mb-2 schedule-row animate__animated animate__fadeIn';
@@ -158,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- 5. MONITORING WAKTU ---
     function checkCurrentTime() {
         if (!isApiSynced) return;
 
@@ -175,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- 6. INISIALISASI ---
     handleApiToggle();
     loadProfileData();
     loadSavedTimeline();

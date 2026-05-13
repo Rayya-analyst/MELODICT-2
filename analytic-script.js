@@ -1,12 +1,3 @@
-// 1. Konfigurasi Global untuk Gaya Neobrutalism
-// Ini memastikan semua grafik memiliki font yang sama dan warna teks hitam tegas
-Chart.defaults.font.family = "'Space Grotesk', sans-serif";
-Chart.defaults.font.weight = '700';
-Chart.defaults.color = '#000';
-
-// ==========================================
-// 2. Inisialisasi Mood Velocity (Line Chart)
-// ==========================================
 const ctxMood = document.getElementById('moodChart').getContext('2d');
 new Chart(ctxMood, {
     type: 'line',
@@ -14,13 +5,13 @@ new Chart(ctxMood, {
         labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
         datasets: [{
             label: 'Mood Index',
-            data: [0.4, 0.6, 0.3, 0.8, 0.5, 0.4, 0.7], // Data dummy (bisa diganti nanti)
-            borderColor: '#000', // Garis hitam tebal
+            data: [0.4, 0.6, 0.3, 0.8, 0.5, 0.4, 0.7], 
+            borderColor: '#000',
             borderWidth: 5,
-            backgroundColor: 'rgba(93, 217, 208, 0.5)', // Warna Teal transparan
+            backgroundColor: 'rgba(93, 217, 208, 0.5)', 
             fill: true,
             pointRadius: 8,
-            pointBackgroundColor: '#ae2f34', // Titik merah
+            pointBackgroundColor: '#ae2f34',
             pointBorderColor: '#000',
             pointBorderWidth: 3
         }]
@@ -28,7 +19,7 @@ new Chart(ctxMood, {
     options: {
     layout: {
         padding: {
-            left: 40,  // Memberi ruang agar titik tidak menempel ke teks HAPPY/SAD
+            left: 40,  
             right: 20,
             top: 20,
             bottom: 20
@@ -39,25 +30,22 @@ new Chart(ctxMood, {
         maintainAspectRatio: false,
         scales: {
             y: { 
-                border: { width: 4, color: '#000' }, // Border samping tebal
+                border: { width: 4, color: '#000' }, 
                 beginAtZero: true, 
                 max: 1,
-                ticks: { display: false } // Sembunyikan angka karena sudah ada label HAPPY/SAD
+                ticks: { display: false } 
             },
             x: { 
-                border: { width: 4, color: '#000' }, // Border bawah tebal
-                ticks: { display: false } // Sembunyikan label hari bawaan karena kita pakai div manual
+                border: { width: 4, color: '#000' }, 
+                ticks: { display: false }
             }
         },
         plugins: {
-            legend: { display: false } // Sembunyikan kotak keterangan di atas
+            legend: { display: false }
         }
     }
 });
 
-// ==========================================
-// 3. Inisialisasi Radar Profile Chart
-// ==========================================
 const ctxRadar = document.getElementById('radarChart').getContext('2d');
 new Chart(ctxRadar, {
     type: 'radar',
@@ -65,10 +53,10 @@ new Chart(ctxRadar, {
         labels: ['ENERGY', 'DANCE', 'ACOUSTIC', 'INSTRUM.', 'LIVENESS'],
         datasets: [{
             data: [80, 90, 30, 40, 70],
-            backgroundColor: 'rgba(174, 47, 52, 0.7)', // Merah transparan
+            backgroundColor: 'rgba(174, 47, 52, 0.7)', 
             borderColor: '#000',
             borderWidth: 4,
-            pointBackgroundColor: '#FBE36A', // Titik kuning
+            pointBackgroundColor: '#FBE36A', 
             pointBorderColor: '#000',
             pointRadius: 4
         }]
@@ -93,10 +81,6 @@ new Chart(ctxRadar, {
     }
 });
 
-// ==========================================
-// 4. Interaksi Tambahan (Opsional)
-// ==========================================
-// Membuat tombol Play di player bar bisa berubah icon saat diklik
 const playBtn = document.querySelector('.play-btn');
 if(playBtn) {
     playBtn.addEventListener('click', function() {

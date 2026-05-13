@@ -299,7 +299,6 @@ h1,h2,h3,h4,h5 {
 ::-webkit-scrollbar-track { background: var(--color-background); border-left: 3px solid #000; }
 ::-webkit-scrollbar-thumb { background: #000; border: 2px solid var(--color-background); }
 
-/* Merapikan input di dalam tabel */
 .table .neo-input {
     border-width: 2px;
     padding: 8px;
@@ -311,7 +310,6 @@ h1,h2,h3,h4,h5 {
     background: #fff;
 }
 
-/* Memberi warna berbeda untuk tiap baris agar mudah dibaca data analyst */
 .table tbody tr:nth-child(even) td {
     background: #fdfdfd;
 }

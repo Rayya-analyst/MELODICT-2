@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. MOOD PICKER
+    
     const moodBtns = document.querySelectorAll('.mood-btn');
     let selectedMood = "Energetic";
 
@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. WELLNESS SYSTEM
     const form = document.getElementById('wellness-form');
     const checks = document.querySelectorAll('.habit-check');
     const scoreText = document.getElementById('score-text');
@@ -66,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Metrics Logged! Analisis AI diperbarui.');
     });
 
-    // 3. SCATTER CHART IMPLEMENTATION
     const ctx = document.getElementById('correlationChart').getContext('2d');
     new Chart(ctx, {
         type: 'scatter',
@@ -103,6 +101,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Run Initial Calculation
     calculateScore();
 });

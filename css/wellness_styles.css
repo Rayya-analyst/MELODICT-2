@@ -299,7 +299,6 @@ h1,h2,h3,h4,h5 {
 ::-webkit-scrollbar-track { background: var(--color-background); border-left: 3px solid #000; }
 ::-webkit-scrollbar-thumb { background: #000; border: 2px solid var(--color-background); }
 
-/* Merapikan input di dalam tabel */
 .table .neo-input {
     border-width: 2px;
     padding: 8px;
@@ -311,7 +310,6 @@ h1,h2,h3,h4,h5 {
     background: #fff;
 }
 
-/* Memberi warna berbeda untuk tiap baris agar mudah dibaca data analyst */
 .table tbody tr:nth-child(even) td {
     background: #fdfdfd;
 }
@@ -325,7 +323,6 @@ select.neo-input {
     background-size: 1em;
 }
 
-/* Import variabel dari tema utama */
 :root {
   --color-primary: #ae2f34;
   --color-primary-container: #ff6b6b;
@@ -346,7 +343,6 @@ body {
   margin: 0;
 }
 
-/* Sidebar & Navigation - Menyamakan dengan Settings */
 #sidebar {
   width: var(--sidebar-width);
   position: fixed;
@@ -366,7 +362,6 @@ body {
   text-underline-offset: 8px;
 }
 
-/* Main Content & Topbar */
 #main-content {
   margin-left: var(--sidebar-width);
 }
@@ -389,7 +384,6 @@ body {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-/* Bento Card - Mengikuti gaya Settings */
 .bento-card {
   border: var(--border-weight);
   background: white;
@@ -400,7 +394,6 @@ body {
   box-shadow: 8px 8px 0 0 #000;
 }
 
-/* Mood Button - Menggunakan warna Tertiary dari Settings saat aktif */
 .mood-btn {
   border: var(--border-weight);
   background: white;
@@ -412,12 +405,11 @@ body {
 }
 
 .mood-btn.active {
-  background: var(--color-tertiary-fixed); /* Warna kuning khas settings */
+  background: var(--color-tertiary-fixed); 
   transform: translate(-4px, -4px);
   box-shadow: 4px 4px 0 0 #000;
 }
 
-/* Habit Row - Menggunakan gaya input settings */
 .habit-row {
   display: flex;
   justify-content: space-between;
@@ -435,7 +427,6 @@ body {
   cursor: pointer;
 }
 
-/* Score Card & Progress Bar */
 .progress-track {
   height: 12px;
   background-color: var(--color-surface-container-highest);
@@ -450,7 +441,6 @@ body {
   transition: width 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Buttons */
 .btn-dark-neo {
   background: var(--color-on-background);
   color: white;
@@ -466,7 +456,6 @@ body {
   box-shadow: 8px 8px 0 0 #000;
 }
 
-/* Chart Area */
 .chart-container {
   border: var(--border-weight);
   background: white;

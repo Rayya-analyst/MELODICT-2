@@ -1,27 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Definisikan Fungsi Update Tampilan
+
     function updateUI() {
         const isConnected = localStorage.getItem('spotifyConnected') === 'true';
         const sessionStatus = localStorage.getItem('sessionStatus') || 'idle';
 
         const stateDisconnected = document.getElementById('state-disconnected');
         const stateConnected = document.getElementById('state-connected');
-        
-        // Tombol-tombol
+
         const btnStart = document.getElementById('btn-start-session');
         const btnPause = document.getElementById('btn-pause-session');
         const btnResume = document.getElementById('btn-resume-session');
         const btnEnd = document.getElementById('btn-end-session');
 
-        // Logic Konek Spotify
         if (isConnected) {
             stateDisconnected?.classList.add('d-none');
             stateConnected?.classList.remove('d-none');
 
-            // Reset semua tombol ke d-none
             [btnStart, btnPause, btnResume, btnEnd].forEach(btn => btn?.classList.add('d-none'));
 
-            // Tampilkan tombol sesuai status sesi
             if (sessionStatus === 'idle') {
                 btnStart?.classList.remove('d-none');
             } else if (sessionStatus === 'active') {
@@ -37,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 2. Gunakan Delegasi Event (Biar tombol tetep bisa ditekan meski di d-none/remove)
     document.addEventListener('click', (e) => {
         const target = e.target.closest('button');
         if (!target) return;
@@ -68,6 +63,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. Jalankan pertama kali saat refresh
     updateUI();
 });
