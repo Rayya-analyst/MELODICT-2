@@ -49,10 +49,6 @@
 
   <div class="mt-auto">
     <div class="d-flex flex-column gap-2 pt-3" style="border-top:1px solid rgba(27,27,27,0.15)">
-      <a href="#" class="d-flex align-items-center gap-2 text-label text-decoration-none" style="color:var(--color-on-background)">
-        <span class="material-symbols-outlined">help</span>
-        Support
-      </a>
       <a href="/index.html" class="d-flex align-items-center gap-2 text-label text-decoration-none" style="color:var(--color-error)">
         <span class="material-symbols-outlined">logout</span>
         Logout
@@ -79,10 +75,6 @@
     </div>
 
     <div class="d-flex align-items-center gap-3">
-      <div class="search-wrapper d-none d-md-block">
-        <input type="text" placeholder="SEARCH SETTINGS..."/>
-        <span class="material-symbols-outlined search-icon">search</span>
-      </div>
 
       <div class="d-flex align-items-center gap-1">
         <span class="material-symbols-outlined icon-topbar">notifications</span>
@@ -149,23 +141,22 @@
 
     <div class="bento-card neo-shadow p-3 p-md-4 bg-white">
       <p class="text-label mb-4" style="opacity: 0.7; text-transform: none; font-weight: 400; font-size: 13px;">
-        Atur jadwal harianmu untuk sinkronisasi otomatis mode Melodict.
+        Set your daily schedule to auto-sync Melodict mode.
       </p>
 
       <div id="timeline-container" class="d-flex flex-column gap-3">
 
-        <!-- Slot 1 -->
         <div class="timeline-slot-row" data-slot="1">
           <div>
-            <span class="slot-label">MULAI</span>
+            <span class="slot-label">START</span>
             <input type="time" class="neo-input p-2" value="07:00">
           </div>
           <div>
-            <span class="slot-label">SELESAI</span>
+            <span class="slot-label">END</span>
             <input type="time" class="neo-input p-2" value="15:00">
           </div>
           <div class="slot-activity">
-            <span class="slot-label">AKTIVITAS</span>
+            <span class="slot-label">ACTIVITY</span>
             <input type="text" class="neo-input p-2" value="Sekolah SMK">
           </div>
           <div class="slot-mode">
@@ -189,34 +180,35 @@
         <div class="mode-guide-grid">
           <div>
             <h6 class="fw-bold mb-1" style="font-size: 12px;">HIGH FOCUS</h6>
-            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">Instrumental & BPM stabil. Cocok buat coding/ngambis tanpa gangguan lirik.</p>
+            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">Instrumental & stable BPM. Suitable for coding/composing without the distraction of lyrics.</p>
           </div>
           <div>
             <h6 class="fw-bold mb-1" style="font-size: 12px;">CREATIVE FLOW</h6>
-            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">High Valence (ceria) & variatif. Buat pancing ide pas lagi desain/nulis.</p>
+            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">High Valence (happy) & varied. Create a fishing rod for ideas while designing/writing.</p>
           </div>
           <div>
             <h6 class="fw-bold mb-1" style="font-size: 12px;">WIND DOWN</h6>
-            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">Low energy & akustik. Nurunin stres biar santai habis pulang sekolah.</p>
+            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">Low energy & acoustic. Reduce stress to stay relaxed after school.</p>
           </div>
           <div>
             <h6 class="fw-bold mb-1" style="font-size: 12px;">WORKOUT</h6>
-            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">High Danceability & Upbeat. Otomatis narik lagu energi tinggi dari Spotify.</p>
+            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">High Danceability & Upbeat. Automatically pull high-energy.</p>
           </div>
         </div>
       </div>
 
       <div class="timeline-actions">
         <button id="add-slot-btn" class="btn-dark-neo px-4 py-3" style="background: #fbe36a; color: black; border-color: var(--color-on-background); font-size: 12px;">
-          + TAMBAH SLOT
+          + ADD SLOT
         </button>
         <button id="save-schedule-btn" class="btn-dark-neo px-4 px-md-5 py-3" style="font-size: 12px;">
-          SIMPAN PERUBAHAN
+          SAVE CHANGES
         </button>
       </div>
 
     </div>
   </section>
+</main>
 
   <footer id="site-footer">
     <h3 class="mb-0" style="font-size:24px; color: var(--color-background);">MELODICT</h3>
@@ -227,43 +219,6 @@
       <a href="#">API</a>
     </div>
   </footer>
-
-</main>
-
-<div id="player-bar">
-
-  <div class="d-flex align-items-center gap-2 gap-md-3 player-left" style="width:25%; min-width:0;">
-    <div style="width:56px; height:56px; border: 2px solid var(--color-on-background); overflow:hidden; flex-shrink:0;">
-      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkSyuiMEp80vuuO9QToKrkuQSnEb8YlUjPqgRfX8t4054OY11EehC2Z0b8FGeiD-s4MRNuz9EBha9DeZxC9aE0qWfKWQSHnRtsoKK01q031jp_XK63Ncn9StIuwzbBvphW-2kgN_5eC-Zw36fmtzKsCDcNvGUK77ogeLioG40MlQ-b_SS2HDy8XoCtEbWylCC0VTyoEd5YoM-4TVOgKiJ-wEyDVjXfDLMe9MGH1JdUTsiDzA5DvyZi_eP7hwGldBr_JDS1KIZW1nA-"
-           alt="Now Playing" style="width:100%; height:100%; object-fit:cover;"/>
-    </div>
-    <div class="song-info" style="overflow:hidden;">
-      <h5 class="mb-0 text-uppercase" style="font-size:14px; font-weight:600; line-height:1.2; font-family:'Public Sans',sans-serif; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">System Overload</h5>
-      <p class="text-label mb-0" style="opacity:0.6; font-size:10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NEO-PUNK COLLECTIVE</p>
-    </div>
-  </div>
-
-  <div class="d-flex flex-column align-items-center gap-2 player-center" style="width:50%;">
-    <div class="d-flex align-items-center gap-3 gap-md-4">
-      <span class="material-symbols-outlined" style="cursor:pointer; font-size:22px;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color=''">skip_previous</span>
-      <button class="play-btn neo-shadow-hover neo-shadow-active">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1; font-size:22px;">play_arrow</span>
-      </button>
-      <span class="material-symbols-outlined" style="cursor:pointer; font-size:22px;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color=''">skip_next</span>
-    </div>
-    <div class="progress-track">
-      <div class="progress-fill" style="width:33%;"></div>
-    </div>
-  </div>
-
-  <div class="d-flex align-items-center justify-content-end gap-2 gap-md-3 volume-section" style="width:25%;">
-    <span class="material-symbols-outlined" style="font-size:20px;">volume_up</span>
-    <div style="width:80px; height:8px; background-color: var(--color-surface-container-highest); border: 1px solid var(--color-on-background);">
-      <div style="height:100%; width:75%; background-color: var(--color-on-background);"></div>
-    </div>
-    <span class="material-symbols-outlined" style="font-size:20px;">fullscreen</span>
-  </div>
-</div>
 
 <script src="/settings-script.js"></script>
 </body>

@@ -140,21 +140,20 @@ h1,h2,h3,h4,h5 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
+  padding: 16px 40px;
   border-bottom: 4px solid var(--color-on-background);
   position: sticky;
   top: 0;
   background-color: var(--color-background);
-  z-index: 1040;
-  gap: 12px;
+  z-index: 1030;
 }
 
 #topbar h2 {
   font-size: 48px;
   font-weight: 900;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
   margin: 0;
-  line-height: 1;
 }
 
 @media (max-width: 575.98px) {
@@ -326,7 +325,9 @@ h1,h2,h3,h4,h5 {
   margin-bottom: 6px;
 }
 
+
 #site-footer {
+  flex-shrink: 0;
   background-color: var(--color-on-background);
   color: var(--color-background);
   border-top: 4px solid var(--color-on-background);
@@ -336,39 +337,36 @@ h1,h2,h3,h4,h5 {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
+
+  /* MODIFIKASI INI */
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  /* Tambahin padding kiri seukuran sidebar biar teks MELODICT sejajar garis */
+  padding-left: calc(var(--sidebar-width) + 40px); 
 }
 
 #site-footer a {
-  color: var(--color-background);
+  /* Ganti warna teks link jadi putih */
+  color: #ffffff !important; 
   text-decoration: none;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-#site-footer a:hover { text-decoration: underline; }
 
-@media (max-width: 575.98px) {
-  #site-footer { padding: 20px; flex-direction: column; align-items: flex-start; gap: 8px; }
+#site-footer a:hover {
+  text-decoration: underline;
+  opacity: 0.8; /* Biar ada efek pas disentuh */
 }
 
-#player-bar {
-  position: fixed;
-  bottom: 0;
-  left: var(--sidebar-width);
-  right: 0;
-  height: 96px;
-  background-color: var(--color-background);
-  border-top: 4px solid var(--color-on-background);
-  display: flex;
-  align-items: center;
-  padding: 0 24px;
-  justify-content: space-between;
-  z-index: 1030;
-}
-
-@media (max-width: 991.98px) {
-  #player-bar { left: 0; padding: 0 16px; }
+/* Pas di HP, balikin ke normal biar gak kosong sebelah kiri */
+@media (max-width: 991px) {
+  #site-footer {
+    padding-left: 20px; 
+    justify-content: center;
+  }
 }
 
 @media (max-width: 575.98px) {

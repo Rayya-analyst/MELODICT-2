@@ -41,9 +41,6 @@
 
   <div class="mt-auto">
     <div class="d-flex flex-column gap-2 pt-3" style="border-top: 1px solid rgba(27,27,27,0.15)">
-      <a href="#" class="d-flex align-items-center gap-2 text-label text-decoration-none" style="color: var(--color-on-background)">
-        <span class="material-symbols-outlined">help</span> Support
-      </a>
       <a href="/index.html" class="d-flex align-items-center gap-2 text-label text-decoration-none" style="color: var(--color-error)">
         <span class="material-symbols-outlined">logout</span> Logout
       </a>
@@ -55,28 +52,19 @@
 
   <header id="topbar">
 
-    <div class="d-flex align-items-center gap-3">
-
+    <div class="topbar-left d-flex align-items-center gap-2">
       <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
-        <div class="hamburger-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-
       <h2 class="mb-0">DASHBOARD</h2>
     </div>
 
     <div class="d-flex align-items-center gap-3">
-      <div class="search-wrapper d-none d-md-block">
-        <input type="text" placeholder="SEARCH SETTINGS..."/>
-        <span class="material-symbols-outlined search-icon">search</span>
-      </div>
-
       <div class="d-flex align-items-center gap-1">
-        <span class="material-symbols-outlined icon-topbar">notifications</span>
-        <span class="material-symbols-outlined icon-topbar">account_circle</span>
+        <span class="material-symbols-outlined" style="font-size:24px; padding:8px; cursor:pointer; border-radius:4px; transition: background 0.2s;" onmouseover="this.style.background='var(--color-primary-container)'" onmouseout="this.style.background='transparent'">notifications</span>
+        <span class="material-symbols-outlined" style="font-size:24px; padding:8px; cursor:pointer; border-radius:4px; transition: background 0.2s;" onmouseover="this.style.background='var(--color-primary-container)'" onmouseout="this.style.background='transparent'">account_circle</span>
       </div>
     </div>
   </header>
@@ -229,6 +217,7 @@
       </div>
     </div>
   </section>
+</main>
 
   <footer id="site-footer">
     <h3 class="mb-0" style="font-size:24px; color: var(--color-background);">MELODICT</h3>
@@ -239,42 +228,6 @@
       <a href="#">API</a>
     </div>
   </footer>
-</main>
-
-<div id="player-bar">
-
-  <div class="d-flex align-items-center gap-3 player-left" style="width:25%; min-width: 0;">
-    <div class="player-track-img" style="width:64px; height:64px; border: 2px solid var(--color-on-background); overflow:hidden; flex-shrink:0;">
-      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkSyuiMEp80vuuO9QToKrkuQSnEb8YlUjPqgRfX8t4054OY11EehC2Z0b8FGeiD-s4MRNuz9EBha9DeZxC9aE0qWfKWQSHnRtsoKK01q031jp_XK63Ncn9StIuwzbBvphW-2kgN_5eC-Zw36fmtzKsCDcNvGUK77ogeLioG40MlQ-b_SS2HDy8XoCtEbWylCC0VTyoEd5YoM-4TVOgKiJ-wEyDVjXfDLMe9MGH1JdUTsiDzA5DvyZi_eP7hwGldBr_JDS1KIZW1nA-"
-           alt="Now Playing" style="width:100%; height:100%; object-fit:cover;"/>
-    </div>
-    <div class="player-track-text" style="min-width:0; overflow:hidden;">
-      <h5 class="mb-0 text-uppercase text-truncate" style="font-size:16px; font-weight:600; line-height:1; font-family:'Public Sans',sans-serif;">System Overload</h5>
-      <p class="text-label mb-0 text-truncate" style="opacity:0.6; font-size: 11px;">NEO-PUNK COLLECTIVE</p>
-    </div>
-  </div>
-
-  <div class="d-flex flex-column align-items-center gap-2 player-center" style="width:50%; flex-shrink: 0;">
-    <div class="d-flex align-items-center gap-3">
-      <span class="material-symbols-outlined" style="cursor:pointer; font-size:24px; transition: color 0.2s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color=''">skip_previous</span>
-      <button class="play-btn neo-shadow-hover neo-shadow-active">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1; font-size:24px;">play_arrow</span>
-      </button>
-      <span class="material-symbols-outlined" style="cursor:pointer; font-size:24px; transition: color 0.2s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color=''">skip_next</span>
-    </div>
-    <div class="progress-track">
-      <div class="progress-fill" style="width:33%;"></div>
-    </div>
-  </div>
-
-  <div class="volume-section d-flex align-items-center justify-content-end gap-3" style="width:25%;">
-    <span class="material-symbols-outlined">volume_up</span>
-    <div style="width:96px; height:8px; background-color: var(--color-surface-container-highest); border: 1px solid var(--color-on-background);">
-      <div style="height:100%; width:75%; background-color: var(--color-on-background);"></div>
-    </div>
-    <span class="material-symbols-outlined d-none d-md-block">fullscreen</span>
-  </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/script.js"></script>

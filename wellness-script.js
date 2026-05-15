@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       localStorage.setItem('melodict_last_log', JSON.stringify(logData));
 
-      alert('Metrics Logged! Dashboard Intelligence telah diperbarui.');
+      alert('Metrics Logged! Dashboard Intelligence updated!');
       console.log('Data Sent to Dashboard:', logData);
     });
   }

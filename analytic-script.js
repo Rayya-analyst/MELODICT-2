@@ -34,7 +34,7 @@ window.addEventListener('load', () => {
             data: {
                 labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
                 datasets: [{
-                    data: [0.5, 0.6, 0.3, 0.8, 0.5, 0.4, 0.7],
+                    data: [0.9, 0.6, 0.3, 0.8, 0.5, 0.4, 0.7],
                     borderColor: '#000',
                     borderWidth: 5,
                     backgroundColor: 'rgba(93, 217, 208, 0.5)',
@@ -69,7 +69,7 @@ window.addEventListener('load', () => {
             data: {
                 labels: ['ENERGY', 'DANCE', 'ACOUSTIC', 'INSTRUM.', 'LIVENESS'],
                 datasets: [{
-                    data: [80, 90, 30, 40, 70],
+                    data: [50, 90, 30, 40, 70],
                     backgroundColor: 'rgba(174, 47, 52, 0.7)',
                     borderColor: '#000',
                     borderWidth: 4
