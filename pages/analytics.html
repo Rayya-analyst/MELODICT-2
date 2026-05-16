@@ -10,7 +10,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/css/analytic_styles.css"/>
+<link rel="stylesheet" href="../css/global.css"/>
+<link rel="stylesheet" href="../css/analytics.css"/>
 
 <style>
 
@@ -22,25 +23,28 @@
 <div id="sidebar-overlay"></div>
 
 <aside id="sidebar">
+  <button id="sidebar-close-btn" class="d-lg-none" aria-label="Close menu">
+    <span class="material-symbols-outlined">close</span>
+  </button>
   <div class="mb-5">
     <h1 class="brand-title mb-0">MELODICT</h1>
     <p class="brand-sub mb-0">Mental Health Sync</p>
   </div>
 
   <nav class="flex-grow d-flex flex-column gap-2 mb-auto">
-    <a href="/dashboard.html">
+    <a href="dashboard.html">
       <span class="material-symbols-outlined">dashboard</span>
       Dashboard
     </a>
-    <a href="/melodict_analytics_dashboard/analytics.html" class="active">
+    <a href="analytics.html" class="active">
       <span class="material-symbols-outlined">leaderboard</span>
       Analytics
     </a>
-    <a href="/wellness_habits/wellness-habits.html">
+    <a href="wellness.html">
       <span class="material-symbols-outlined">fitness_center</span>
-      Wellness Habits
+      Wellness Hub
     </a>
-    <a href="/melodict_settings/settings.html">
+    <a href="settings.html">
       <span class="material-symbols-outlined">settings</span>
       Settings
     </a>
@@ -48,7 +52,7 @@
 
   <div class="mt-auto">
     <div class="d-flex flex-column gap-2 pt-3" style="border-top: 1px solid rgba(27,27,27,0.15)">
-      <a href="/index.html" class="d-flex align-items-center gap-2 text-label text-decoration-none" style="color: var(--color-error)">
+      <a href="../index.html" class="d-flex align-items-center gap-2 text-label text-decoration-none" style="color: var(--color-error)">
         <span class="material-symbols-outlined">logout</span> Logout
       </a>
     </div>
@@ -70,8 +74,8 @@
 
     <div class="d-flex align-items-center gap-3">
       <div class="d-flex align-items-center gap-1">
-        <span class="material-symbols-outlined" style="font-size:24px; padding:8px; cursor:pointer; border-radius:4px; transition: background 0.2s;" onmouseover="this.style.background='var(--color-primary-container)'" onmouseout="this.style.background='transparent'">notifications</span>
-        <span class="material-symbols-outlined" style="font-size:24px; padding:8px; cursor:pointer; border-radius:4px; transition: background 0.2s;" onmouseover="this.style.background='var(--color-primary-container)'" onmouseout="this.style.background='transparent'">account_circle</span>
+        <span class="material-symbols-outlined icon-topbar">notifications</span>
+        <span class="material-symbols-outlined icon-topbar">account_circle</span>
       </div>
     </div>
   </header>
@@ -155,6 +159,7 @@
   </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="/analytic-script.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/analytics.js"></script>
 </body>
 </html>

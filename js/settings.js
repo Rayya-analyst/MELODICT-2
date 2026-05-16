@@ -4,10 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const timelineContainer = document.getElementById('timeline-container');
     const addBtn = document.getElementById('add-slot-btn');
     const saveScheduleBtn = document.getElementById('save-schedule-btn');
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('sidebar-overlay');
-    const closeBtn = document.getElementById('sidebar-close-btn');
     const syncToggle = document.getElementById('sync-toggle');
 
     let isApiSynced = true;
@@ -27,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function saveProfileData(e) {
-        e.preventDefault();
+
         
         const btn = profileForm.querySelector('button');
         const inputs = profileForm.querySelectorAll('.neo-input');
@@ -67,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 circle.style.right = '2px';
                 toggleBtn.style.background = '#1DB954'; 
                 if (statusText) statusText.innerText = "Connected to Melodict Engine. ACTIVE.";
-                checkCurrentTime();
             } else {
                 circle.style.right = 'auto';
                 circle.style.left = '2px';
@@ -79,44 +74,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createRow(start = "07:00", end = "15:00", activity = "", preset = "HIGH FOCUS") {
         const row = document.createElement('div');
-        row.className = 'timeline-slot-row';
+        row.className = 'timeline-slot-card bento-card border border-4 border-dark mb-4 bg-white p-3 p-md-4 neo-shadow-sm';
+        
+        // Coba hitung ada berapa card untuk memberi label "SLOT X"
+        const existingSlots = document.querySelectorAll('.timeline-slot-card').length;
+        const slotLabel = `SLOT ${existingSlots + 1}`;
         
         row.innerHTML = `
-            <div>
-                <span class="slot-label">START</span>
-                <input type="time" class="neo-input p-2 time-start" value="${start}">
+          <div class="d-flex justify-content-between align-items-center mb-3 pb-3" style="border-bottom: 2px solid var(--color-on-background);">
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge bg-dark text-white rounded-0 px-3 py-2 fs-6 fw-bold slot-number-badge">${slotLabel}</span>
             </div>
-            <div>
-                <span class="slot-label">END</span>
-                <input type="time" class="neo-input p-2 time-end" value="${end}">
+            <button type="button" class="btn-remove btn-dark-neo d-flex align-items-center justify-content-center p-2 neo-shadow-hover" style="background: var(--color-primary-container); border-color: var(--color-on-background); color: var(--color-on-background);" aria-label="Delete slot">
+              <span class="material-symbols-outlined">delete</span>
+            </button>
+          </div>
+          
+          <div class="row g-3 align-items-end">
+            <div class="col-6 col-md-3">
+              <label class="text-label mb-2 d-block fw-black">START TIME</label>
+              <input type="time" class="neo-input w-100 p-3 fw-bold fs-5 time-start" value="${start}">
             </div>
-            <div class="slot-activity">
-                <span class="slot-label">ACTIVITY</span>
-                <input type="text" class="neo-input p-2 activity-name" value="${activity}">
+            <div class="col-6 col-md-3">
+              <label class="text-label mb-2 d-block fw-black">END TIME</label>
+              <input type="time" class="neo-input w-100 p-3 fw-bold fs-5 time-end" value="${end}">
             </div>
-            <div class="slot-mode">
-                <span class="slot-label">MODE PRESET</span>
-                <select class="neo-input p-2 mode-preset">
-                    <option value="HIGH FOCUS" ${preset === 'HIGH FOCUS' ? 'selected' : ''}>HIGH FOCUS</option>
-                    <option value="CREATIVE FLOW" ${preset === 'CREATIVE FLOW' ? 'selected' : ''}>CREATIVE FLOW</option>
-                    <option value="WIND DOWN" ${preset === 'WIND DOWN' ? 'selected' : ''}>WIND DOWN</option>
-                    <option value="WORKOUT" ${preset === 'WORKOUT' ? 'selected' : ''}>WORKOUT</option>
-                </select>
+            <div class="col-12 col-md-6">
+              <label class="text-label mb-2 d-block fw-black">ACTIVITY</label>
+              <input type="text" class="neo-input w-100 p-3 fw-bold fs-5 activity-name" value="${activity}">
             </div>
-            <div class="slot-delete d-flex align-items-end">
-                <button type="button" class="btn-dark-neo py-2 px-3 btn-remove" style="background: #ff6b6b; color: white; width: 100%;">✕</button>
+            <div class="col-12 mt-3">
+              <label class="text-label mb-2 d-block fw-black">MODE PRESET</label>
+              <select class="neo-input w-100 p-3 fw-bold fs-5 mode-preset" style="cursor: pointer; background-color: var(--color-tertiary-fixed);">
+                <option value="HIGH FOCUS" ${preset === 'HIGH FOCUS' ? 'selected' : ''}>HIGH FOCUS</option>
+                <option value="CREATIVE FLOW" ${preset === 'CREATIVE FLOW' ? 'selected' : ''}>CREATIVE FLOW</option>
+                <option value="WIND DOWN" ${preset === 'WIND DOWN' ? 'selected' : ''}>WIND DOWN</option>
+                <option value="WORKOUT" ${preset === 'WORKOUT' ? 'selected' : ''}>WORKOUT</option>
+              </select>
             </div>
+          </div>
         `;
 
         row.querySelector('.btn-remove').addEventListener('click', () => {
             row.remove();
+            updateSlotLabels();
         });
 
         return row;
     }
 
+    function updateSlotLabels() {
+        const cards = document.querySelectorAll('.timeline-slot-card');
+        cards.forEach((card, index) => {
+            const badge = card.querySelector('.slot-number-badge');
+            if (badge) badge.innerText = `SLOT ${index + 1}`;
+        });
+    }
+
     function saveAllTimeline() {
-        const rows = document.querySelectorAll('.timeline-slot-row');
+        const rows = document.querySelectorAll('.timeline-slot-card');
         const scheduleArray = [];
 
         rows.forEach(row => {
@@ -138,8 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
             saveScheduleBtn.innerText = originalText;
             saveScheduleBtn.style.background = ""; 
         }, 2000);
-
-        checkCurrentTime();
     }
 
     function loadSavedTimeline() {
@@ -149,39 +163,17 @@ document.addEventListener('DOMContentLoaded', () => {
             savedData.forEach(item => {
                 timelineContainer.appendChild(createRow(item.start, item.end, item.activity, item.preset));
             });
+        } else if (timelineContainer) {
+            // Bind remove event to pre-filled HTML row if no saved data exists
+            const existingRemoveBtns = timelineContainer.querySelectorAll('.btn-remove');
+            existingRemoveBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.target.closest('.timeline-slot-row').remove();
+                });
+            });
         }
     }
 
-    function checkCurrentTime() {
-        if (!isApiSynced) return;
-
-        const now = new Date();
-        const currentTime = now.getHours().toString().padStart(2, '0') + ":" + 
-                            now.getMinutes().toString().padStart(2, '0');
-
-        const savedData = JSON.parse(localStorage.getItem('melodict_schedule')) || [];
-        const currentTask = savedData.find(item => currentTime >= item.start && currentTime <= item.end);
-
-        if (currentTask) {
-            console.log(`[Melodict] Mode Aktif: ${currentTask.preset}`);
-        }
-    }
-
-    function openSidebar() {
-        if (!sidebar || !overlay) return;
-        sidebar.classList.add('open');
-        overlay.classList.add('active');
-        if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeSidebar() {
-        if (!sidebar || !overlay) return;
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-        if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    }
 
     handleApiToggle();
     loadProfileData(); 
@@ -194,9 +186,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (addBtn && timelineContainer) addBtn.addEventListener('click', () => timelineContainer.appendChild(createRow()));
     if (saveScheduleBtn) saveScheduleBtn.addEventListener('click', saveAllTimeline);
-    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openSidebar);
-    if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
-    if (overlay) overlay.addEventListener('click', closeSidebar);
-
-    setInterval(checkCurrentTime, 60000);
 });

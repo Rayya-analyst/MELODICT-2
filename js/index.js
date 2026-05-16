@@ -4,20 +4,7 @@ const navbar = document.getElementById('main-navbar');
 const sections = document.querySelectorAll('section[id], header[id]');
 const navItems = document.querySelectorAll('.nav-link-item:not(.nav-cta)');
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (!target || !navbar) return;
 
-        e.preventDefault();
-        const navHeight = navbar.offsetHeight;
-        const targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
-        window.scrollTo({ top: targetTop, behavior: 'smooth' });
-
-        navLinks?.classList.remove('open');
-        hamburgerBtn?.classList.remove('active');
-    });
-});
 
 hamburgerBtn?.addEventListener('click', () => {
     navLinks?.classList.toggle('open');

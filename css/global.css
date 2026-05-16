@@ -192,6 +192,29 @@ h1, h2, h3, h4, h5, .font-display {
 #hamburger-btn.open span:nth-child(2) { opacity: 0; }
 #hamburger-btn.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+#sidebar-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-on-background);
+}
+#sidebar-close-btn:hover {
+  color: var(--color-primary);
+}
+
+.icon-topbar {
+  font-size: 24px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.icon-topbar:hover {
+  background: var(--color-primary-container);
+}
 
 .bento-card {
   border: 4px solid var(--color-on-background);
@@ -273,7 +296,7 @@ h1, h2, h3, h4, h5, .font-display {
 
 #site-footer a {
   /* Ganti warna teks link jadi putih */
-  color: #ffffff !important; 
+  color: #ffffff; 
   text-decoration: none;
   font-size: 14px;
   font-weight: 700;

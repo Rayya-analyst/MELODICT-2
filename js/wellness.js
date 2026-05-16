@@ -1,43 +1,3 @@
-function toggleSidebar() {
-  const sidebar  = document.getElementById('sidebar');
-  const overlay  = document.getElementById('sidebar-overlay');
-  const hamburger = document.getElementById('hamburger-btn');
-
-  const isOpen = sidebar.classList.toggle('open');
-  overlay.classList.toggle('show', isOpen);
-  hamburger.classList.toggle('is-open', isOpen);
-
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-}
-
-function closeSidebar() {
-  const sidebar   = document.getElementById('sidebar');
-  const overlay   = document.getElementById('sidebar-overlay');
-  const hamburger = document.getElementById('hamburger-btn');
-
-  sidebar.classList.remove('open');
-  overlay.classList.remove('show');
-  hamburger.classList.remove('is-open');
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeSidebar();
-});
-
-document.querySelectorAll('#sidebar nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth < 992) closeSidebar();
-  });
-});
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth >= 992) {
-    closeSidebar();
-    document.body.style.overflow = '';
-  }
-});
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -166,8 +126,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       localStorage.setItem('melodict_last_log', JSON.stringify(logData));
 
-      alert('Metrics Logged! Dashboard Intelligence updated!');
+      // Increment Streak Real-time!
+      let currentStreak = parseInt(localStorage.getItem('melodict_streak') || "5", 10);
+      currentStreak += 1;
+      localStorage.setItem('melodict_streak', currentStreak.toString());
+
+      const wellnessStreak = document.getElementById('wellness-streak-display');
+      if (wellnessStreak) wellnessStreak.innerHTML = `${currentStreak} DAYS FIRE! <i class="bi bi-fire"></i>`;
+
+      alert(`Metrics Logged! Streak increased to ${currentStreak}! Dashboard updated.`);
       console.log('Data Sent to Dashboard:', logData);
     });
   }
+
+  const streakData = localStorage.getItem('melodict_streak') || "5";
+  const wellnessStreak = document.getElementById('wellness-streak-display');
+  if (wellnessStreak) wellnessStreak.innerHTML = `${streakData} DAYS FIRE! <i class="bi bi-fire"></i>`;
 });

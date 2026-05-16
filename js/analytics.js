@@ -91,48 +91,7 @@ window.addEventListener('load', () => {
         });
     }
 
-    const hamburger = document.getElementById('hamburger-btn');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('sidebar-overlay');
 
-    const openSidebar = () => {
-        sidebar.classList.add('open');
-        overlay.classList.add('active');
-        hamburger.classList.add('open');
-        hamburger.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-    };
-
-    const closeSidebar = () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    };
-
-    if (hamburger && sidebar && overlay) {
-        hamburger.addEventListener('click', () => {
-            sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
-        });
-
-        overlay.addEventListener('click', closeSidebar);
-
-        sidebar.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 992) closeSidebar();
-            });
-        });
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 992) {
-                sidebar.classList.remove('open');
-                overlay.classList.remove('active');
-                hamburger.classList.remove('open');
-                document.body.style.overflow = '';
-            }
-        });
-    }
 
     calculateAnalytics();
 });

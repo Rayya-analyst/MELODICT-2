@@ -57,13 +57,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (document.getElementById('focus-cons')) document.getElementById('focus-cons').innerText = `${lastHabitData.score}%`;
             if (document.getElementById('opt-bpm')) document.getElementById('opt-bpm').innerText = lastHabitData.bpm;
-            if (document.getElementById('last-bpm-stat')) document.getElementById('last-bpm-stat').innerText = `${lastHabitData.bpm} BPM`;
         }
+
+        const streakData = localStorage.getItem('melodict_streak') || "5";
+        const dashboardStreak = document.getElementById('dashboard-streak-display');
+        if (dashboardStreak) dashboardStreak.innerHTML = `${streakData} DAYS FIRE!`;
 
         if (lastSession) {
 
             if (document.getElementById('last-session-time')) {
                 document.getElementById('last-session-time').innerText = `${lastSession.duration} MIN`;
+            }
+            if (document.getElementById('longest-session-stat')) {
+                document.getElementById('longest-session-stat').innerText = `${lastSession.longest || lastSession.duration} MIN`;
             }
 
             const welcomeMsg = document.querySelector('#state-connected p');
@@ -121,7 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const startTime = localStorage.getItem('sessionStartTime');
                 const diffMin = startTime ? Math.floor((endTime - parseInt(startTime)) / 60000) : 0;
 
-                localStorage.setItem('melodict_session_data', JSON.stringify({ duration: diffMin }));
+                const previousSession = JSON.parse(localStorage.getItem('melodict_session_data')) || { longest: 0, duration: 0 };
+                const longest = Math.max(previousSession.longest || 0, diffMin);
+
+                localStorage.setItem('melodict_session_data', JSON.stringify({ duration: diffMin, longest: longest }));
                 localStorage.setItem('sessionStatus', 'idle');
                 localStorage.removeItem('sessionStartTime');
                 stopLiveTimer();
@@ -130,37 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('sidebar-overlay');
 
-    function openSidebar() {
-        sidebar.classList.add('open');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
 
-    function closeSidebar() {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    hamburgerBtn.addEventListener('click', () => {
-        if (sidebar.classList.contains('open')) {
-            closeSidebar();
-        } else {
-            openSidebar();
-        }
-    });
-
-    overlay.addEventListener('click', closeSidebar);
-
-    document.querySelectorAll('#sidebar nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 992) closeSidebar();
-        });
-    });
 
     updateUI();
 });
