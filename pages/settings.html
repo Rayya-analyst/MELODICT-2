@@ -1,229 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MELODICT | Settings</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="../css/global.css"/>
-<link rel="stylesheet" href="../css/settings.css"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | MELODICT</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
 </head>
+<body class="bg-neo">
+  <input type="checkbox" id="mobile-toggle">
 
-<body>
-
-<div id="sidebar-overlay"></div>
-
-<aside id="sidebar">
-  <button id="sidebar-close-btn" class="d-lg-none" aria-label="Close menu">
-    <span class="material-symbols-outlined">close</span>
-  </button>
-
-  <div class="mb-5">
-    <h1 class="brand-title mb-0">MELODICT</h1>
-    <p class="brand-sub mb-0">Mental Health Sync</p>
-  </div>
-
-  <nav class="flex-grow d-flex flex-column gap-2 mb-auto">
-    <a href="dashboard.html">
-      <span class="material-symbols-outlined">dashboard</span>
-      Dashboard
-    </a>
-    <a href="analytics.html">
-      <span class="material-symbols-outlined">leaderboard</span>
-      Analytics
-    </a>
-    <a href="wellness.html">
-      <span class="material-symbols-outlined">fitness_center</span>
-      Wellness Hub
-    </a>
-    <a href="settings.html" class="active">
-      <span class="material-symbols-outlined">settings</span>
-      Settings
-    </a>
+  <nav id="sidebar" class="bg-white">
+    <div class="p-4 border-bottom border-neo">
+      <h2 class="fw-black mb-0">MELODICT</h2>
+      <small class="fw-bold">DATA-DRIVEN RHYTHM</small>
+    </div>
+    <div class="p-4 d-flex flex-column gap-2 flex-grow-1">
+      <a href="dashboard.html" class="nav-link-neo p-2 text-decoration-none text-center">Dashboard</a>
+      <a href="analytics.html" class="nav-link-neo p-2 text-decoration-none text-center">Analytics</a>
+      <a href="wellness.html" class="nav-link-neo p-2 text-decoration-none text-center">Wellness</a>
+      <a href="settings.html" class="nav-link-neo active p-2 text-decoration-none text-center bg-neon-green">Settings</a>
+    </div>
   </nav>
 
-  <div class="mt-auto">
-    <div class="d-flex flex-column gap-2 pt-3" style="border-top:1px solid rgba(27,27,27,0.15)">
-      <a href="../index.html" class="d-flex align-items-center gap-2 text-label text-decoration-none" style="color:var(--color-error)">
-        <span class="material-symbols-outlined">logout</span>
-        Logout
-      </a>
-    </div>
-  </div>
-</aside>
+  <main id="main-content" class="p-4 p-md-5">
+    <header class="d-flex align-items-center gap-3 mb-5">
+      <label for="mobile-toggle" class="mobile-btn-inline mb-0">
+        <div class="strip"></div>
+        <div class="strip"></div>
+        <div class="strip"></div>
+      </label>
+      <h1 class="fw-black mb-0">PREFERENCES</h1>
+    </header>
 
-<main id="main-content">
-
-  <header id="topbar">
-    <div class="topbar-left d-flex align-items-center gap-2">
-      <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <h2 class="mb-0">SETTINGS</h2>
-    </div>
-
-    <div class="d-flex align-items-center gap-3">
-      <div class="d-flex align-items-center gap-1">
-        <span class="material-symbols-outlined icon-topbar">notifications</span>
-        <span class="material-symbols-outlined icon-topbar">account_circle</span>
-      </div>
-    </div>
-  </header>
-
-  <section class="profile-section">
-    <div class="row g-4 mb-2">
-
-      <div class="col-12">
-        <h2 class="mb-3 text-uppercase">PROFILE IDENTITY</h2>
-      </div>
-
-      <div class="col-lg-8">
-        <div class="bento-card neo-shadow p-4 bg-white h-100">
-          <form class="row g-4 profile-form-enhanced">
-            <div class="col-sm-6">
-              <label class="text-label mb-2 d-block fw-black" style="font-size: 12px;">DISPLAY NAME</label>
-              <input type="text" class="neo-input p-3 fw-bold fs-5 w-100" value="DEWO">
-            </div>
-            <div class="col-sm-6">
-              <label class="text-label mb-2 d-block fw-black" style="font-size: 12px;">EMAIL ADDRESS</label>
-              <input type="email" class="neo-input p-3 fw-bold fs-5 w-100" value="dewo@gmail.com">
-            </div>
-            <div class="col-12">
-              <label class="text-label mb-2 d-block fw-black" style="font-size: 12px;">USER BIO</label>
-              <textarea class="neo-input p-3 fw-bold fs-5 w-100" rows="3">Rayya cinta Dewo</textarea>
-            </div>
-            <div class="col-12 mt-4 pt-4" style="border-top: 4px solid var(--color-on-background);">
-              <button type="button" class="btn-dark-neo w-100 py-3 fs-5 fw-black text-uppercase neo-shadow-hover">
-                UPDATE PROFILE DETAILS
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="bento-card neo-shadow p-4 text-white h-100" style="background:var(--color-secondary);">
-          <div class="d-flex justify-content-between mb-4">
-            <h3 class="mb-0 text-uppercase">SPOTIFY<br>API SYNC</h3>
-            <span class="material-symbols-outlined" style="font-size:48px; font-variation-settings:'FILL' 1;">music_note</span>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card neo-card p-4 bg-white">
+          <h3 class="fw-black mb-4 border-bottom border-neo pb-3">GENERAL</h3>
+          
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <span class="fw-bold fs-5">Spotify Connect</span>
+            <button class="btn-neo bg-neon-green px-3 py-1 fs-6 shadow-none">CONNECTED</button>
           </div>
-          <p class="fw-bold small mb-4" style="color:var(--color-secondary-fixed-dim);">
-            Connected to Melodict-Engine-v4. ACTIVE.
-          </p>
-          <div class="d-flex justify-content-between align-items-center bg-black p-3 border border-2 border-white">
-            <span class="text-label text-white small">SYNC STATUS</span>
-            <div class="toggle-switch" id="sync-toggle">
-              <div class="toggle-circle"></div>
-            </div>
+
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <span class="fw-bold fs-5">Data Sync</span>
+            <input type="checkbox" class="neo-toggle" checked>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold fs-5">Push Notifications</span>
+            <input type="checkbox" class="neo-toggle">
           </div>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <section class="timeline-section">
-
-    <h2 class="mb-3 text-uppercase">DAILY ACTIVITY TIMELINE</h2>
-
-    <div class="bento-card neo-shadow p-3 p-md-4 bg-white">
-      <p class="text-label mb-4" style="opacity: 0.7; text-transform: none; font-weight: 400; font-size: 13px;">
-        Set your daily schedule to auto-sync Melodict mode.
-      </p>
-
-      <div id="timeline-container" class="d-flex flex-column gap-3">
-
-        <div class="timeline-slot-card bento-card border border-4 border-dark mb-4 bg-white p-3 p-md-4 neo-shadow-sm" data-slot="1">
-          <div class="d-flex justify-content-between align-items-center mb-3 pb-3" style="border-bottom: 2px solid var(--color-on-background);">
-            <div class="d-flex align-items-center gap-2">
-              <span class="badge bg-dark text-white rounded-0 px-3 py-2 fs-6 fw-bold">SLOT 1</span>
-            </div>
-            <button type="button" class="btn-remove btn-dark-neo d-flex align-items-center justify-content-center p-2 neo-shadow-hover" style="background: var(--color-primary-container); border-color: var(--color-on-background); color: var(--color-on-background);" aria-label="Delete slot">
-              <span class="material-symbols-outlined">delete</span>
-            </button>
+      <div class="col-lg-6">
+        <div class="card neo-card p-4 bg-neon-yellow">
+          <h3 class="fw-black mb-4 border-bottom border-neo pb-3">WELLNESS SCHEDULE</h3>
+          
+          <div class="bg-white border-neo p-3 mb-3 d-flex justify-content-between align-items-center shadow-none">
+            <span class="fw-bold">Morning Focus (08:00 AM)</span>
+            <button class="btn btn-dark rounded-0 fw-black btn-sm">X</button>
           </div>
           
-          <div class="row g-3 align-items-end">
-            <div class="col-6 col-md-3">
-              <label class="text-label mb-2 d-block fw-black">START TIME</label>
-              <input type="time" class="neo-input w-100 p-3 fw-bold fs-5 time-start" value="07:00">
-            </div>
-            <div class="col-6 col-md-3">
-              <label class="text-label mb-2 d-block fw-black">END TIME</label>
-              <input type="time" class="neo-input w-100 p-3 fw-bold fs-5 time-end" value="15:00">
-            </div>
-            <div class="col-12 col-md-6">
-              <label class="text-label mb-2 d-block fw-black">ACTIVITY</label>
-              <input type="text" class="neo-input w-100 p-3 fw-bold fs-5 activity-name" value="Sekolah SMK">
-            </div>
-            <div class="col-12 mt-3">
-              <label class="text-label mb-2 d-block fw-black">MODE PRESET</label>
-              <select class="neo-input w-100 p-3 fw-bold fs-5 mode-preset" style="cursor: pointer; background-color: var(--color-tertiary-fixed);">
-                <option selected>HIGH FOCUS</option>
-                <option>CREATIVE FLOW</option>
-                <option>WIND DOWN</option>
-                <option>WORKOUT</option>
-              </select>
-            </div>
+          <div class="bg-white border-neo p-3 mb-4 d-flex justify-content-between align-items-center shadow-none">
+            <span class="fw-bold">Evening Wind-down (09:00 PM)</span>
+            <button class="btn btn-dark rounded-0 fw-black btn-sm">X</button>
           </div>
-        </div>
 
-      </div>
-
-      <div class="mt-4 pt-4" style="background: #f8f9fa; margin: 20px -16px -16px; padding: 20px; border-radius: 0 0 8px 8px; border-top: 2px solid var(--color-on-background);">
-        <span class="badge bg-dark text-uppercase px-3 py-2 mb-3 d-inline-block">Mode Guide</span>
-        <div class="mode-guide-grid">
-          <div>
-            <h6 class="fw-bold mb-1" style="font-size: 12px;">HIGH FOCUS</h6>
-            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">Instrumental & stable BPM. Suitable for coding/composing without the distraction of lyrics.</p>
-          </div>
-          <div>
-            <h6 class="fw-bold mb-1" style="font-size: 12px;">CREATIVE FLOW</h6>
-            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">High Valence (happy) & varied. Create a fishing rod for ideas while designing/writing.</p>
-          </div>
-          <div>
-            <h6 class="fw-bold mb-1" style="font-size: 12px;">WIND DOWN</h6>
-            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">Low energy & acoustic. Reduce stress to stay relaxed after school.</p>
-          </div>
-          <div>
-            <h6 class="fw-bold mb-1" style="font-size: 12px;">WORKOUT</h6>
-            <p class="mb-0" style="font-size: 11px; opacity: 0.8;">High Danceability & Upbeat. Automatically pull high-energy.</p>
-          </div>
+          <button class="btn-neo bg-white w-100 fs-5 border-dashed" style="border-style: dashed;">+ ADD TIME SLOT</button>
         </div>
       </div>
-
-      <div class="timeline-actions">
-        <button id="add-slot-btn" class="btn-dark-neo w-100 py-4 mt-2 fs-5 fw-black text-uppercase neo-shadow-hover" style="background: transparent; border: 4px dashed var(--color-on-background); color: var(--color-on-background);">
-        + ADD NEW TIME SLOT
-      </button>
-
-      <button id="save-schedule-btn" class="btn-start-session w-100 py-4 mt-4 fs-4 fw-black text-uppercase neo-shadow-hover" style="background: var(--color-primary-container);">
-        SAVE ENTIRE TIMELINE
-      </button>
-      </div>
-
     </div>
-  </section>
-</main>
+  </main>
 
-  <footer id="site-footer">
-    <h3 class="mb-0" style="font-size:24px; color: var(--color-background);">MELODICT</h3>
-    <span class="text-label" style="font-size:12px;">© 2026 MELODICT. STAY LOUD. STAY GROUNDED.</span>
-    <div class="d-flex gap-4">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">API</a>
-    </div>
-  </footer>
-
-<script src="../js/global.js"></script>
-<script src="../js/settings.js"></script>
 </body>
 </html>

@@ -1,165 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MELODICT | Analytics Dashboard</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="../css/global.css"/>
-<link rel="stylesheet" href="../css/analytics.css"/>
-
-<style>
-
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics | MELODICT</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
 </head>
+<body class="bg-neo">
+  <input type="checkbox" id="mobile-toggle">
 
-<body>
-
-<div id="sidebar-overlay"></div>
-
-<aside id="sidebar">
-  <button id="sidebar-close-btn" class="d-lg-none" aria-label="Close menu">
-    <span class="material-symbols-outlined">close</span>
-  </button>
-  <div class="mb-5">
-    <h1 class="brand-title mb-0">MELODICT</h1>
-    <p class="brand-sub mb-0">Mental Health Sync</p>
-  </div>
-
-  <nav class="flex-grow d-flex flex-column gap-2 mb-auto">
-    <a href="dashboard.html">
-      <span class="material-symbols-outlined">dashboard</span>
-      Dashboard
-    </a>
-    <a href="analytics.html" class="active">
-      <span class="material-symbols-outlined">leaderboard</span>
-      Analytics
-    </a>
-    <a href="wellness.html">
-      <span class="material-symbols-outlined">fitness_center</span>
-      Wellness Hub
-    </a>
-    <a href="settings.html">
-      <span class="material-symbols-outlined">settings</span>
-      Settings
-    </a>
+  <nav id="sidebar" class="bg-white">
+    <div class="p-4 border-bottom border-neo">
+      <h2 class="fw-black mb-0">MELODICT</h2>
+      <small class="fw-bold">DATA-DRIVEN RHYTHM</small>
+    </div>
+    <div class="p-4 d-flex flex-column gap-2 flex-grow-1">
+      <a href="dashboard.html" class="nav-link-neo p-2 text-decoration-none text-center">Dashboard</a>
+      <a href="analytics.html" class="nav-link-neo active p-2 text-decoration-none text-center bg-neon-green">Analytics</a>
+      <a href="wellness.html" class="nav-link-neo p-2 text-decoration-none text-center">Wellness</a>
+      <a href="settings.html" class="nav-link-neo p-2 text-decoration-none text-center">Settings</a>
+    </div>
   </nav>
 
-  <div class="mt-auto">
-    <div class="d-flex flex-column gap-2 pt-3" style="border-top: 1px solid rgba(27,27,27,0.15)">
-      <a href="../index.html" class="d-flex align-items-center gap-2 text-label text-decoration-none" style="color: var(--color-error)">
-        <span class="material-symbols-outlined">logout</span> Logout
-      </a>
-    </div>
-  </div>
-</aside>
+  <main id="main-content" class="p-4 p-md-5">
+    <header class="d-flex align-items-center gap-3 mb-5">
+      <label for="mobile-toggle" class="mobile-btn-inline mb-0">
+        <div class="strip"></div>
+        <div class="strip"></div>
+        <div class="strip"></div>
+      </label>
+      <h1 class="fw-black mb-0">AUDIO ANALYTICS</h1>
+    </header>
 
-<main id="main-content">
-
-  <header id="topbar">
-
-    <div class="topbar-left d-flex align-items-center gap-2">
-      <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <h2 class="mb-0">ANALYTICS</h2>
-    </div>
-
-    <div class="d-flex align-items-center gap-3">
-      <div class="d-flex align-items-center gap-1">
-        <span class="material-symbols-outlined icon-topbar">notifications</span>
-        <span class="material-symbols-outlined icon-topbar">account_circle</span>
-      </div>
-    </div>
-  </header>
-
-  <section class="section-content p-4 p-xl-5" style="max-width: 1280px; margin: 0 auto;">
-    <div class="row g-4">
-
-      <div class="col-12 col-xl-8">
-        <div class="bento-card neo-shadow p-3 p-md-4 bg-white h-100">
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <h3 class="text-uppercase mb-0" style="font-size: clamp(16px, 3vw, 24px);">Mood Velocity</h3>
-            <span class="badge bg-dark text-white p-2">WEEKLY VIEW</span>
-          </div>
-
-          <div class="position-relative grid-bg mood-chart-wrapper" style="height:320px; border: 4px solid #000; overflow:hidden;">
-            <div class="position-absolute d-flex flex-column justify-content-between h-100 text-label ps-2 py-3"
-                 style="font-size:11px; opacity:0.6; z-index:10; left:0; pointer-events: none;">
-              <span>HAPPY</span>
-              <span>NEUTRAL</span>
-              <span>SAD</span>
-            </div>
-            <div class="p-3 h-100 w-100">
-              <canvas id="moodChart"></canvas>
-            </div>
-            <div class="position-absolute bottom-0 w-100 d-flex justify-content-between px-5 pb-1 text-label"
-                 style="opacity:0.5; font-size:11px; z-index:10; pointer-events: none;">
-              <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
-            </div>
-          </div>
-
-          <p class="mt-3 fst-italic text-muted" style="font-size: 13px;">
-            Valence is peaking during your evening "Focus Playlists" sessions.
-          </p>
+    <div class="row g-4 mb-4">
+      <div class="col-md-4">
+        <div class="card neo-card p-4 bg-neon-yellow">
+          <h6 class="fw-black">AVG VALENCE</h6>
+          <h2 class="display-4 fw-black mb-0">0.72</h2>
         </div>
       </div>
-
-      <div class="col-12 col-md-6 col-xl-4">
-        <div class="bento-card neo-shadow p-3 p-md-4 d-flex flex-column h-100" style="background-color: var(--color-tertiary-fixed);">
-          <h3 class="text-uppercase mb-4" style="font-size: clamp(20px, 4vw, 32px);">Radar Profile</h3>
-
-          <div class="flex-grow-1 d-flex align-items-center justify-content-center p-2" style="min-height: 220px;">
-            <canvas id="radarChart"></canvas>
-          </div>
-
-          <div class="mt-auto pt-5 border-top border-dark border-2">
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="text-label">DOMINANT TRAIT</span>
-              <span class="badge bg-black text-white p-2">ENERGY</span>
-            </div>
-          </div>
+      <div class="col-md-4">
+        <div class="card neo-card p-4 bg-white">
+          <h6 class="fw-black">AVG ENERGY</h6>
+          <h2 class="display-4 fw-black mb-0">0.85</h2>
         </div>
       </div>
-
-      <div class="col-6 col-md-6 col-lg-6">
-        <div class="bento-card neo-shadow p-3 p-md-4 text-center h-100" style="background-color: var(--color-surface);">
-          <span class="text-label d-block mb-2">Daily Sync</span>
-          <span id="sync-val" class="stat-number" style="color: var(--color-primary);">94%</span>
-          <p class="text-label mt-2 mb-0" style="font-size:11px;">Near Optimal</p>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-6 col-lg-6">
-        <div class="bento-card neo-shadow p-3 p-md-4 text-center h-100" style="background-color: var(--color-surface);">
-          <span class="text-label d-block mb-2">Session Time</span>
-          <span id="session-val" class="stat-number" style="color: var(--color-secondary);">2.4h</span>
-          <p class="text-label mt-2 mb-0" style="font-size:11px;">+12% vs LW</p>
+      <div class="col-md-4">
+        <div class="card neo-card p-4 bg-neon-pink">
+          <h6 class="fw-black text-white">AVG TEMPO</h6>
+          <h2 class="display-4 fw-black text-white mb-0">120 <small class="fs-6">BPM</small></h2>
         </div>
       </div>
     </div>
-  </section>
-</main>
 
-  <footer id="site-footer">
-    <h3 class="mb-0" style="font-size:24px; color: var(--color-background);">MELODICT</h3>
-    <span class="text-label" style="font-size:12px;">© 2026 MELODICT. STAY LOUD. STAY GROUNDED.</span>
-    <div class="d-flex gap-4">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">API</a>
+    <div class="card neo-card p-4 p-md-5 bg-white overflow-hidden">
+      <h3 class="fw-black mb-4">WEEKLY ENERGY LEVELS (CSS CHART)</h3>
+      <div class="css-chart pb-5">
+        <div class="bar" style="height: 40%; background: var(--neo-pink);">
+          <span>40</span><div class="bar-label">MON</div>
+        </div>
+        <div class="bar" style="height: 70%; background: var(--neo-yellow);">
+          <span>70</span><div class="bar-label">TUE</div>
+        </div>
+        <div class="bar" style="height: 55%; background: var(--neo-green);">
+          <span>55</span><div class="bar-label">WED</div>
+        </div>
+        <div class="bar" style="height: 90%; background: var(--neo-pink);">
+          <span>90</span><div class="bar-label">THU</div>
+        </div>
+        <div class="bar" style="height: 65%; background: var(--neo-yellow);">
+          <span>65</span><div class="bar-label">FRI</div>
+        </div>
+      </div>
     </div>
-  </footer>
+  </main>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../js/global.js"></script>
-<script src="../js/analytics.js"></script>
 </body>
 </html>
