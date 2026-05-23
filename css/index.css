@@ -1,44 +1,16 @@
+/* LANDING PAGE STYLES - index.html */
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; 
 }
 
-:root {
-  --bg-neo: #F4F4F0;
-  --neo-black: #000;
-  --neo-white: #FFF;
-  --neo-green: #00FF66;
-  --neo-pink: #FF00CC;
-  --neo-yellow: #FFFF00;
-  --neo-border: 4px solid var(--neo-black);
-  --neo-shadow: 8px 8px 0 var(--neo-black);
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg-neo);
-}
-
-.fw-black { font-weight: 900; }
-.bg-neo { background-color: var(--bg-neo) !important; }
-.text-neon-pink { color: var(--neo-pink) !important; }
-.text-neon-yellow { color: var(--neo-yellow) !important; }
-.text-neon-green { color: var(--neo-green) !important; }
-.bg-neon-pink { background-color: var(--neo-pink) !important; }
-.bg-neon-yellow { background-color: var(--neo-yellow) !important; }
-.bg-neon-green { background-color: var(--neo-green) !important; }
-
-.border-neo { border: var(--neo-border) !important; }
-.border-bottom.border-neo { border-bottom: var(--neo-border) !important; }
-.border-end.border-neo { border-right: var(--neo-border) !important; }
-.border-top.border-neo { border-top: var(--neo-border) !important; }
-
-.neo-card {
-  border: var(--neo-border);
-  box-shadow: var(--neo-shadow);
-  border-radius: 0;
-}
 .shadow-neon-green { box-shadow: 12px 12px 0 var(--neo-green); }
+
+.section-wrapper {
+  min-height: calc(100vh - 80px);
+  box-sizing: border-box;
+}
 
 .badge-neo {
   background: var(--neo-yellow);

@@ -24,8 +24,11 @@ body {
 .bg-neon-pink { background-color: var(--neo-pink) !important; }
 .bg-neon-yellow { background-color: var(--neo-yellow) !important; }
 .bg-neon-green { background-color: var(--neo-green) !important; }
+.text-muted { color: #666; }
 
 .border-neo { border: var(--neo-border) !important; }
+
+/* App Components */
 .neo-card {
   background-color: var(--neo-white);
   border: var(--neo-border);
@@ -88,76 +91,6 @@ body {
   padding-bottom: 100px;
 }
 
-#player-bar {
-  position: fixed;
-  bottom: 0;
-  left: var(--sidebar-width);
-  right: 0;
-  height: 90px;
-  background-color: var(--neo-white);
-  border-top: var(--neo-border);
-  z-index: 1040;
-}
-
-.css-chart {
-  display: flex;
-  align-items: flex-end;
-  height: 250px;
-  gap: 1rem;
-  border-bottom: var(--neo-border);
-  border-left: var(--neo-border);
-  padding: 1rem 1rem 0;
-  margin-top: 2rem;
-}
-.bar {
-  flex: 1;
-  background: var(--neo-pink);
-  border: var(--neo-border);
-  border-bottom: none;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-.bar span {
-  position: absolute;
-  top: -25px;
-  font-weight: 900;
-}
-.bar-label {
-  position: absolute;
-  bottom: -30px;
-  font-weight: 800;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.neo-toggle {
-  appearance: none;
-  width: 50px;
-  height: 26px;
-  border: var(--neo-border);
-  background: var(--neo-white);
-  position: relative;
-  outline: none;
-  cursor: pointer;
-}
-.neo-toggle::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 18px;
-  height: 18px;
-  background: var(--neo-black);
-  transition: transform 0.1s;
-}
-.neo-toggle:checked {
-  background: var(--neo-green);
-}
-.neo-toggle:checked::after {
-  transform: translateX(24px);
-}
 
 #mobile-toggle { display: none; }
 .mobile-btn-inline {
@@ -186,5 +119,4 @@ body {
   }
   .mobile-btn-inline { display: flex; }
   #main-content { margin-left: 0; }
-  #player-bar { left: 0; }
 }
