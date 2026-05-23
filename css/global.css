@@ -28,7 +28,6 @@ body {
 
 .border-neo { border: var(--neo-border) !important; }
 
-/* App Components */
 .neo-card {
   background-color: var(--neo-white);
   border: var(--neo-border);
