@@ -1,6 +1,6 @@
-# MELODICT 2 | Data-Driven Rhythm
+# MELODICT | Data-Driven Rhythm
 
-**MELODICT 2** is a neo-brutalist, web-based platform that decodes Spotify listening patterns and audio metadata into actionable wellness insights. By evaluating technical parameters of songs (such as Valence, Energy, Acousticness, and Danceability), it simulates translating digital listening histories into emotional and mental health scores.
+**MELODICT ** is a neo-brutalist, web-based platform that decodes Spotify listening patterns and audio metadata into actionable wellness insights. By evaluating technical parameters of songs (such as Valence, Energy, Acousticness, and Danceability), it simulates translating digital listening histories into emotional and mental health scores.
 
 ---
 
