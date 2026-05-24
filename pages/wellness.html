@@ -12,14 +12,14 @@
   <input type="checkbox" id="mobile-toggle">
 
   <nav id="sidebar" class="bg-white">
-    <div class="p-4 border-bottom border-neo">
+    <div class="p-4" style="border-bottom: var(--neo-border);">
       <h2 class="fw-black mb-0">MELODICT</h2>
       <small class="fw-bold">DATA-DRIVEN RHYTHM</small>
     </div>
     <div class="p-4 d-flex flex-column gap-2 flex-grow-1">
       <a href="dashboard.html" class="nav-link-neo p-2 text-decoration-none text-center">Dashboard</a>
       <a href="analytics.html" class="nav-link-neo p-2 text-decoration-none text-center">Analytics</a>
-      <a href="wellness.html" class="nav-link-neo active p-2 text-decoration-none text-center bg-neon-green">Wellness</a>
+      <a href="wellness.html" class="nav-link-neo active p-2 text-decoration-none text-center" style="background: var(--neo-green);">Wellness</a>
       <a href="settings.html" class="nav-link-neo p-2 text-decoration-none text-center">Settings</a>
     </div>
   </nav>
@@ -36,41 +36,33 @@
 
     <div class="row g-4 mb-4">
       <div class="col-lg-8">
-        <div class="card neo-card p-4 p-md-5 bg-white h-100">
+        <div class="card neo-card p-4 p-md-5 bg-white">
           <h2 class="display-6 fw-black text-uppercase">Wellbeing Score</h2>
           <div class="d-flex align-items-center gap-4 mt-4">
-            <h1 class="display-1 fw-black text-neon-green mb-0" style="text-shadow: 4px 4px 0 #000;">85</h1>
-            <p class="fw-bold fs-5 mb-0">Your listening habits suggest you are currently in a highly focused and relaxed state. Keep it up!</p>
+            <h1 class="display-1 fw-black" style="color: var(--neo-green); text-shadow: 4px 4px 0 var(--neo-black);">85</h1>
+            <p class="fw-bold fs-5">Your listening habits suggest you are currently in a highly focused and relaxed state. Keep it up!</p>
           </div>
         </div>
       </div>
       <div class="col-lg-4">
-        <div class="card neo-card p-4 bg-neon-pink h-100">
+        <div class="card neo-card p-4" style="background: var(--neo-pink);">
           <h4 class="fw-black text-uppercase mb-4">Recommended Action</h4>
-          <div class="bg-white border-neo p-3 text-center shadow-none mb-3">
-            <h5 class="fw-black mb-0">Take a 5 Min Walk</h5>
+          <div class="bg-white p-3 text-center mb-3" style="border: var(--neo-border);">
+            <h5 class="fw-black">Take a 5 Min Walk</h5>
           </div>
-          <button class="btn-neo bg-neon-yellow w-100 fs-5 mt-auto">MARK DONE</button>
+          <button class="btn-neo w-100 fs-5" style="background: var(--neo-yellow);">MARK DONE</button>
         </div>
       </div>
     </div>
 
-    <div class="card neo-card p-4 p-md-5 bg-dark text-white overflow-hidden">
-      <h3 class="fw-black text-neon-yellow mb-4">BURNOUT RISK CORRELATION</h3>
+    <div class="card neo-card p-4 p-md-5 bg-dark text-white">
+      <h3 class="fw-black mb-4" style="color: var(--neo-yellow);">BURNOUT RISK CORRELATION</h3>
       <p class="fw-bold">High intensity music combined with long sessions.</p>
       <div class="css-chart pb-5 border-white mt-4" style="border-left-color: white; border-bottom-color: white;">
-        <div class="bar bg-white border-white" style="height: 20%;">
-          <span class="text-neon-yellow">20%</span><div class="bar-label">MON</div>
-        </div>
-        <div class="bar bg-white border-white" style="height: 35%;">
-          <span class="text-neon-yellow">35%</span><div class="bar-label">TUE</div>
-        </div>
-        <div class="bar bg-white border-white" style="height: 15%;">
-          <span class="text-neon-yellow">15%</span><div class="bar-label">WED</div>
-        </div>
-        <div class="bar bg-white border-white" style="height: 80%; background: var(--neo-pink) !important;">
-          <span class="text-neon-pink">80%</span><div class="bar-label text-neon-pink">THU</div>
-        </div>
+        <div class="bar bg-white border-white" style="height: 20%;"><span style="color: var(--neo-yellow);">20%</span><div class="bar-label">MON</div></div>
+        <div class="bar bg-white border-white" style="height: 35%;"><span style="color: var(--neo-yellow);">35%</span><div class="bar-label">TUE</div></div>
+        <div class="bar bg-white border-white" style="height: 15%;"><span style="color: var(--neo-yellow);">15%</span><div class="bar-label">WED</div></div>
+        <div class="bar bg-white border-white" style="height: 80%; background: var(--neo-pink) !important;"><span style="color: var(--neo-pink);">80%</span><div class="bar-label" style="color: var(--neo-pink);">THU</div></div>
       </div>
     </div>
   </main>

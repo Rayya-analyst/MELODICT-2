@@ -6,8 +6,7 @@ html {
 .shadow-neon-green { box-shadow: 12px 12px 0 var(--neo-green); }
 
 .section-wrapper {
-  min-height: calc(100vh - 80px);
-  box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .badge-neo {
@@ -22,14 +21,7 @@ html {
   letter-spacing: 2px;
 }
 
-.neo-terminal {
-  background: #111;
-  color: var(--neo-green);
-  border: 4px solid #333;
-  font-family: monospace;
-}
-
-.btn-cta, .btn-massive {
+.btn-cta {
   background: var(--neo-green);
   color: var(--neo-black) !important;
   border: var(--neo-border);
@@ -41,22 +33,27 @@ html {
   padding: 0.75rem 2rem;
   border-radius: 0;
 }
-.btn-massive {
-  background: var(--neo-yellow);
-  font-size: 2rem;
-  padding: 1.5rem 4rem;
-}
-.btn-cta:active, .btn-massive:active {
+.btn-cta:active {
   transform: translate(6px, 6px);
   box-shadow: 0 0 0 var(--neo-black);
 }
 
-.hover-pink { transition: color 0.1s; }
-.hover-pink:hover { color: var(--neo-pink) !important; }
-
-@media (max-width: 768px) {
-  .section-wrapper {
-    padding-top: 100px;
-    padding-bottom: 50px;
-  }
+.btn-massive {
+  background: var(--neo-yellow);
+  color: var(--neo-black) !important;
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.1s, box-shadow 0.1s;
+  font-size: 2rem;
+  padding: 1.5rem 4rem;
+  border-radius: 0;
 }
+.btn-massive:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 var(--neo-black);
+}
+
+.hover-pink:hover { color: var(--neo-pink) !important; }

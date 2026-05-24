@@ -10,12 +10,7 @@
 }
 .bar {
   flex: 1;
-  background: var(--neo-pink);
-  border: var(--neo-border);
-  border-bottom: none;
   position: relative;
-  display: flex;
-  justify-content: center;
 }
 .bar span {
   position: absolute;

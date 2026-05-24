@@ -5,7 +5,6 @@
   border: var(--neo-border);
   background: var(--neo-white);
   position: relative;
-  outline: none;
   cursor: pointer;
 }
 .neo-toggle::after {
