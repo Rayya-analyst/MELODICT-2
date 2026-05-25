@@ -39,7 +39,6 @@ html {
 }
 
 .btn-massive {
-  background: var(--neo-yellow);
   color: var(--neo-black) !important;
   border: var(--neo-border);
   box-shadow: var(--neo-shadow);

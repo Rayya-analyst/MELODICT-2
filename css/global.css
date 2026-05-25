@@ -108,6 +108,12 @@ body {
   background-color: var(--neo-black);
 }
 
+.mobile-btn-inline:hover {
+  background: var(--neo-green);
+  box-shadow: 3px 3px 0 var(--neo-black);
+  transform: translate(-2px, -2px);
+}
+
 @media (max-width: 991px) {
   #sidebar { 
     transform: translateX(-100%); 
